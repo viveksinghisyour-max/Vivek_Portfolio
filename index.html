@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivek Sikarwar - Cloud Security Engineer & SOC Analyst</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-text">Vivek Sikarwar</div>
+            <div class="loader-subtitle">Securing Digital Infrastructure</div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div> 
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">🛡️ Vivek Sikarwar</a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="theme-toggle" id="theme-toggle">
+                <span class="theme-icon">🌙</span>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background"></div>
+        <div class="cyber-grid"></div>
+        <div class="particles"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    Hi, I'm <span class="highlight">Vivek Sikarwar</span>
+                </h1>
+                <h2 class="hero-subtitle">
+                    <span class="typing-text" id="typing-text">Cloud Security Engineer</span>
+                    <span class="cursor">|</span>
+                </h2>
+                <p class="hero-description">
+                    Securing Digital Infrastructure with Advanced Threat Detection
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn--primary btn--lg">Get In Touch</a>
+                    <a href="#projects" class="btn btn--outline btn--lg">View Projects</a>
+                </div>
+                <div class="hero-social-links">
+                    <a href="https://www.linkedin.com/in/vivek-singh-843639326" class="hero-social-link" target="_blank" title="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/its_vivek_chwdry?igsh=NXgxa2lsMWFxMXd5" class="hero-social-link" target="_blank" title="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/viveksinghisyour-max" class="hero-social-link" target="_blank" title="GitHub">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <div class="section-subtitle">Cybersecurity Professional</div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-intro">
+                        <p>I'm a dedicated cybersecurity professional with expertise in cloud security engineering and SOC analysis. With deep knowledge in threat detection, incident response, and security automation, I help organizations strengthen their security posture against evolving cyber threats.</p>
+                    </div>
+                    <div class="skills-grid">
+                        <h3>Technical Expertise</h3>
+                        <div class="skills-list">
+                            <div class="skill-item" data-level="95">
+                                <div class="skill-info">
+                                    <span class="skill-name">Cloud Security Engineering</span>
+                                    <span class="skill-percentage">95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-level="92">
+                                <div class="skill-info">
+                                    <span class="skill-name">SOC Analysis</span>
+                                    <span class="skill-percentage">92%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-level="90">
+                                <div class="skill-info">
+                                    <span class="skill-name">Python</span>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-level="85">
+                                <div class="skill-info">
+                                    <span class="skill-name">Java</span>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-level="82">
+                                <div class="skill-info">
+                                    <span class="skill-name">JavaScript</span>
+                                    <span class="skill-percentage">82%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-level="89">
+                                <div class="skill-info">
+                                    <span class="skill-name">SIEM Tools</span>
+                                    <span class="skill-percentage">89%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-container">
+                        <img src="vivek.jpg" alt="Vivek Sikarwar" />
+                        <div class="image-overlay"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Services</h2>
+                <div class="section-subtitle">What I can do for you</div>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3 class="service-title">Cloud Security Engineering</h3>
+                    <p class="service-description">Comprehensive cloud security architecture, implementation, and monitoring across AWS, Azure, and GCP platforms</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <h3 class="service-title">SOC Analysis & Monitoring</h3>
+                    <p class="service-description">24/7 security operations center analysis, threat hunting, and incident response coordination</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3 class="service-title">Security Automation</h3>
+                    <p class="service-description">Python and Java-based security automation tools for threat detection and response workflows</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3 class="service-title">Security Consulting</h3>
+                    <p class="service-description">Expert cybersecurity consulting for risk assessment, compliance, and security strategy development</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Security Projects</h2>
+                <div class="section-subtitle">Advanced cybersecurity solutions</div>
+            </div>
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="Security">Security</button>
+                <button class="filter-btn" data-filter="Cloud">Cloud</button>
+                <button class="filter-btn" data-filter="Programming">Development</button>
+            </div>
+            <div class="projects-grid" id="projects-grid">
+                <div class="project-card featured" data-category="Security">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&h=400&fit=crop" alt="Advanced Keylogger System" />
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <button class="project-btn" onclick="openProjectModal(1)">View Details</button>
+                                <a href="https://github.com/viveksinghisyour-max" class="project-btn" target="_blank">Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Advanced Keylogger System</h3>
+                        <p class="project-description">Sophisticated keylogger application with stealth capabilities, encrypted data transmission, and remote monitoring features for security testing purposes</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Windows API</span>
+                            <span class="tech-tag">Encryption</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card featured" data-category="Security">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Anti-Forensic Detection System" />
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <button class="project-btn" onclick="openProjectModal(2)">View Details</button>
+                                <a href="https://github.com/viveksinghisyour-max" class="project-btn" target="_blank">Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Anti-Forensic Detection System</h3>
+                        <p class="project-description">Advanced system for detecting anti-forensic techniques and maintaining digital evidence integrity during security investigations</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Digital Forensics</span>
+                            <span class="tech-tag">Machine Learning</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card featured" data-category="Security">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop" alt="Real-time SOC Dashboard" />
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <button class="project-btn" onclick="openProjectModal(3)">View Details</button>
+                                <a href="https://github.com/viveksinghisyour-max" class="project-btn" target="_blank">Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Real-time SOC Dashboard</h3>
+                        <p class="project-description">Comprehensive security operations center dashboard with real-time threat monitoring, incident tracking, and automated alert system</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">WebSocket</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="Cloud">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop" alt="Cloud Security Assessment Tool" />
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <button class="project-btn" onclick="openProjectModal(4)">View Details</button>
+                                <a href="https://github.com/viveksinghisyour-max" class="project-btn" target="_blank">Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Cloud Security Assessment Tool</h3>
+                        <p class="project-description">Automated cloud security assessment platform for AWS and Azure environments with compliance reporting and vulnerability detection</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">AWS SDK</span>
+                            <span class="tech-tag">Azure API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="Security">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop" alt="Network Vulnerability Scanner" />
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <button class="project-btn" onclick="openProjectModal(5)">View Details</button>
+                                <a href="https://github.com/viveksinghisyour-max" class="project-btn" target="_blank">Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Network Vulnerability Scanner</h3>
+                        <p class="project-description">Comprehensive network vulnerability scanning tool with automated reporting and risk assessment</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Nmap</span>
+                            <span class="tech-tag">Security</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="Security">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1550645612-83f5d594b671?w=600&h=400&fit=crop" alt="Automated Threat Detection System" />
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <button class="project-btn" onclick="openProjectModal(6)">View Details</button>
+                                <a href="https://github.com/viveksinghisyour-max" class="project-btn" target="_blank">Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Automated Threat Detection System</h3>
+                        <p class="project-description">Machine learning-powered threat detection system with behavioral analysis and anomaly detection</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">ML</span>
+                            <span class="tech-tag">TensorFlow</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="Programming">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop" alt="Security Automation Scripts" />
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <button class="project-btn" onclick="openProjectModal(7)">View Details</button>
+                                <a href="https://github.com/viveksinghisyour-max" class="project-btn" target="_blank">Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Security Automation Scripts</h3>
+                        <p class="project-description">Collection of Python automation scripts for security tasks including log analysis and threat intelligence gathering</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Bash</span>
+                            <span class="tech-tag">APIs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="Programming">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop" alt="Java Security Analysis Tool" />
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <button class="project-btn" onclick="openProjectModal(8)">View Details</button>
+                                <a href="https://github.com/viveksinghisyour-max" class="project-btn" target="_blank">Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Java Security Analysis Tool</h3>
+                        <p class="project-description">Enterprise-grade Java application for security code analysis and vulnerability assessment</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Security Libraries</span>
+                            <span class="tech-tag">Maven</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Testimonials</h2>
+                <div class="section-subtitle">What security professionals say</div>
+            </div>
+            <div class="testimonials-slider" id="testimonials-slider">
+                <div class="testimonial-slide active">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Vivek is an exceptional cybersecurity professional. His expertise in cloud security and proactive threat detection has significantly strengthened our security posture. His automation scripts have saved us countless hours."</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" alt="Rajesh Patel" class="author-avatar" />
+                            <div class="author-info">
+                                <div class="author-name">Rajesh Patel</div>
+                                <div class="author-role">CISO, SecureCloud Technologies</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Working with Vivek was a pleasure. His analytical skills and attention to detail in SOC operations are outstanding. He consistently delivered high-quality threat analysis and incident response."</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b787?w=100&h=100&fit=crop&crop=face" alt="Priya Sharma" class="author-avatar" />
+                            <div class="author-info">
+                                <div class="author-name">Priya Sharma</div>
+                                <div class="author-role">SOC Manager, CyberDefense Solutions</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Vivek brings both technical expertise and innovative thinking to cybersecurity challenges. His Java and Python development skills combined with security knowledge make him invaluable to any security team."</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Amit Kumar" class="author-avatar" />
+                            <div class="author-info">
+                                <div class="author-name">Amit Kumar</div>
+                                <div class="author-role">Senior Security Consultant, InfoSec Consultancy</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonials-nav">
+                <button class="testimonial-nav-btn prev" id="testimonial-prev">‹</button>
+                <div class="testimonial-dots" id="testimonial-dots"></div>
+                <button class="testimonial-nav-btn next" id="testimonial-next">›</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="section-subtitle">Let's discuss your security needs</div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p><a href="mailto:viveksinghisyour@gmail.com">viveksinghisyour@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p><a href="tel:+918791533032">+91 8791533032</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Hathras(UP), India</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/vivek-singh-843639326" class="social-link" target="_blank">
+                            <span class="social-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </span>
+                            LinkedIn
+                        </a>
+                        <a href="https://www.instagram.com/its_vivek_chwdry?igsh=NXgxa2lsMWFxMXd5" class="social-link" target="_blank">
+                            <span class="social-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </span>
+                            Instagram
+                        </a>
+                        <a href="https://github.com/viveksinghisyour-max" class="social-link" target="_blank">
+                            <span class="social-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </span>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                        <div class="form-error" id="name-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                        <div class="form-error" id="email-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                        <div class="form-error" id="subject-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                        <div class="form-error" id="message-error"></div>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full-width">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-loading hidden">Sending...</span>
+                    </button>
+                    <div class="form-message" id="form-message"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Vivek Sikarwar. All rights reserved.</p>
+                <p>Securing digital infrastructure with 🔒 and expertise</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div class="modal hidden" id="project-modal">
+        <div class="modal-overlay" onclick="closeProjectModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeProjectModal()">&times;</button>
+            <div class="modal-body" id="modal-body">
+                <!-- Project details will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
