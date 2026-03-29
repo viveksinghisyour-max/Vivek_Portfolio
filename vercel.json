@@ -8,16 +8,16 @@
   ],
   "routes": [
     {
-      "src": "/(.*\\.css)",
+      "src": "/(.*\\.(css|js|jpg|png|svg|ico))",
       "dest": "/$1"
     },
     {
-      "src": "/(.*\\.js)",
-      "dest": "/$1"
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
     },
     {
-      "src": "/(.*\\.jpg)",
-      "dest": "/$1"
+      "src": "/images/(.*)",
+      "dest": "/images/$1"
     },
     {
       "src": "/(.*)",

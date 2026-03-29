@@ -599,13 +599,23 @@ class CyberSecurityPortfolio {
         }
 
         try {
-            // Simulate secure form submission
-            await this.simulateSecureFormSubmission(formData);
+            // Send secure form submission to database backend
+            const payload = Object.fromEntries(formData);
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            
+            if (!response.ok) {
+                const err = await response.json();
+                throw new Error(err.error || 'Server error');
+            }
             
             this.showFormMessage('✅ Secure transmission successful! Message encrypted and delivered.', 'success');
             form.reset();
         } catch (error) {
-            this.showFormMessage('❌ Security error: Message transmission failed. Please try again.', 'error');
+            this.showFormMessage(`❌ Security error: ${error.message}`, 'error');
         } finally {
             // Reset button state
             submitBtn.disabled = false;
@@ -618,24 +628,12 @@ class CyberSecurityPortfolio {
         }
     }
 
-    simulateSecureFormSubmission(formData) {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                // Simulate successful secure transmission (95% of the time)
-                if (Math.random() > 0.05) {
-                    resolve('Secure message delivered');
-                } else {
-                    reject('Security protocol error');
-                }
-            }, 2500);
-        });
-    }
-
     showFormMessage(message, type) {
         const messageElement = document.getElementById('form-message');
         if (!messageElement) return;
 
-        messageElement.innerHTML = message;
+        // Use textContent instead of innerHTML to prevent XSS vulnerabilities
+        messageElement.textContent = message;
         messageElement.className = `form-message ${type}`;
         messageElement.style.display = 'block';
 
@@ -949,140 +947,68 @@ class CyberSecurityPortfolio {
 // Project Modal Data - Updated Cybersecurity Projects
 const cyberProjectData = {
     1: {
-        title: "Advanced Keylogger System",
-        description: "Sophisticated keylogger application with stealth capabilities, encrypted data transmission, and remote monitoring features for security testing purposes. Built with advanced Windows API integration and military-grade encryption protocols.",
-        image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&h=400&fit=crop",
-        technologies: ["Python", "Windows API", "AES Encryption", "Socket Programming", "Steganography"],
+        title: "KeyLogger Project",
+        description: "A Python-based keylogger implementation with an integrated defense system to detect and block malicious keyloggers. Features real-time keystroke capturing and logging.",
+        image: "images/keylogger_project.png",
+        technologies: ["Python", "pynput"],
         features: [
-            "🔒 AES-256 encryption for all captured data",
-            "👻 Advanced stealth mode with rootkit capabilities",
-            "📡 Remote data transmission via secure channels",
-            "🖼️ Screenshot capture with timestamp logging",
-            "🔍 System information gathering and analysis",
-            "⚡ Real-time keystroke analysis and filtering"
+            "⌨️ Captures alphanumeric and special keys",
+            "📝 Logs keystrokes in real-time to keylog.txt",
+            "🏃‍♂️ Simple and lightweight implementation",
+            "🛡️ Integrated defense system",
+            "🛑 Stops on ESC key press"
         ],
-        liveUrl: "https://github.com/viveksinghisyour-max",
-        githubUrl: "https://github.com/viveksinghisyour-max",
-        category: "Penetration Testing"
+        liveUrl: "https://github.com/viveksinghisyour-max/KeyLogger",
+        githubUrl: "https://github.com/viveksinghisyour-max/KeyLogger",
+        category: "Security"
     },
     2: {
-        title: "Anti-Forensic Detection System",
-        description: "Advanced system for detecting anti-forensic techniques and maintaining digital evidence integrity during security investigations. Features machine learning algorithms for behavioral analysis.",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-        technologies: ["Python", "Digital Forensics", "Machine Learning", "Security Analysis", "TensorFlow"],
+        title: "Keylogger Defense System",
+        description: "A Python-based defense tool that monitors and blocks pynput-based keyloggers in real-time. Continuously scans for suspicious processes and secures keylog file activity.",
+        image: "images/keylogger_defense.png",
+        technologies: ["Python", "psutil", "Cross-Platform API"],
         features: [
-            "🔍 Real-time anti-forensic technique detection",
-            "🧠 ML-powered behavioral analysis engine",
-            "📊 Digital evidence integrity verification",
-            "🔒 Secure evidence chain of custody",
-            "⚡ Automated forensic artifact extraction",
-            "📈 Advanced timeline reconstruction capabilities"
+            "🔍 Real-time monitoring for pynput-based processes",
+            "🛑 Automatically terminates suspicious processes",
+            "💻 Detects keylogger processes within VS Code",
+            "🔐 Secures or removes detected keylog files",
+            "⚠️ Detailed real-time alerts and status updates"
         ],
-        liveUrl: "https://github.com/viveksinghisyour-max",
-        githubUrl: "https://github.com/viveksinghisyour-max",
-        category: "Digital Forensics"
+        liveUrl: "https://github.com/viveksinghisyour-max/detect-keylogger",
+        githubUrl: "https://github.com/viveksinghisyour-max/detect-keylogger",
+        category: "Security"
     },
     3: {
-        title: "Real-time SOC Dashboard",
-        description: "Comprehensive security operations center dashboard with real-time threat monitoring, incident tracking, automated alert system, and machine learning-powered anomaly detection for enterprise environments.",
-        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop",
-        technologies: ["Python", "Django", "JavaScript", "D3.js", "WebSocket", "Redis", "PostgreSQL"],
+        title: "Civic Complaint System",
+        description: "A full-stack application for managing and resolving civic complaints, designed to help smart cities monitor and address issues efficiently with interactive maps.",
+        image: "images/civic_complaint.png",
+        technologies: ["React", "Node.js", "Express.js", "SQLite", "Leaflet", "JWT"],
         features: [
-            "📊 Real-time threat visualization dashboard",
-            "🚨 Automated incident response workflows",
-            "🤖 ML-powered anomaly detection engine",
-            "📈 Advanced security metrics and KPIs",
-            "🔔 Multi-channel alert management system",
-            "🗂️ Comprehensive incident case management"
+            "🗺️ Interactive map integration with Leaflet",
+            "🔒 Secure JWT Authentication & Bcryptjs hashing",
+            "📊 Efficient civic complaint monitoring dashboard",
+            "⚡ Fast React and Vite frontend architecture",
+            "📂 Lightweight and robust SQLite backend"
         ],
-        liveUrl: "https://github.com/viveksinghisyour-max",
-        githubUrl: "https://github.com/viveksinghisyour-max",
-        category: "SOC Operations"
+        liveUrl: "https://github.com/viveksinghisyour-max/civic_complaint_systems",
+        githubUrl: "https://github.com/viveksinghisyour-max/civic_complaint_systems",
+        category: "Web Development"
     },
     4: {
-        title: "Cloud Security Assessment Tool",
-        description: "Automated cloud security assessment platform for AWS and Azure environments with compliance reporting, vulnerability detection, and continuous security monitoring capabilities.",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop",
-        technologies: ["Python", "AWS SDK", "Azure API", "Terraform", "Security Frameworks", "Docker"],
+        title: "BugShield AI",
+        description: "BugShield AI is a Visual Studio Code extension and local security scanner designed to detect vulnerabilities and secrets in your codebase early in the development cycle.",
+        image: "images/bugshield_ai.png",
+        technologies: ["Python", "TypeScript", "Node.js", "VS Code API"],
         features: [
-            "☁️ Multi-cloud security assessment (AWS, Azure, GCP)",
-            "📋 Automated compliance reporting (SOC2, PCI-DSS)",
-            "🔍 Vulnerability scanning and prioritization",
-            "📊 Security posture scoring and trending",
-            "🛡️ Infrastructure as Code security analysis",
-            "🔄 Continuous security monitoring integration"
+            "🧩 Direct VS Code IDE Integration",
+            "🔑 Advanced Secret Scanning (.env, .yaml, .js, .py, etc.)",
+            "📦 Dependency Vulnerability Scanning (requirements.txt)",
+            "💯 Comprehensive quantified Security Score",
+            "⚡ Fast standalone CLI scanner support"
         ],
-        liveUrl: "https://github.com/viveksinghisyour-max",
-        githubUrl: "https://github.com/viveksinghisyour-max",
-        category: "Cloud Security"
-    },
-    5: {
-        title: "Network Vulnerability Scanner",
-        description: "Comprehensive network vulnerability scanning tool with automated reporting, risk assessment, and integration with popular security frameworks for enterprise network security testing.",
-        image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop",
-        technologies: ["Python", "Nmap", "OpenVAS", "Custom Modules", "Report Generation"],
-        features: [
-            "🌐 Comprehensive network discovery and mapping",
-            "🔍 Advanced vulnerability detection algorithms",
-            "📊 Risk-based vulnerability prioritization",
-            "📄 Automated executive and technical reporting",
-            "🔧 Integration with popular security tools",
-            "⚡ High-performance multi-threaded scanning"
-        ],
-        liveUrl: "https://github.com/viveksinghisyour-max",
-        githubUrl: "https://github.com/viveksinghisyour-max",
-        category: "Network Security"
-    },
-    6: {
-        title: "Automated Threat Detection System",
-        description: "Machine learning-powered threat detection system with behavioral analysis, anomaly detection, and automated response capabilities for advanced persistent threat identification.",
-        image: "https://images.unsplash.com/photo-1550645612-83f5d594b671?w=600&h=400&fit=crop",
-        technologies: ["Python", "TensorFlow", "Scikit-learn", "Apache Kafka", "Security APIs"],
-        features: [
-            "🧠 ML-powered behavioral threat analysis",
-            "🎯 Advanced persistent threat (APT) detection",
-            "⚡ Real-time threat scoring and correlation",
-            "🔄 Automated threat response orchestration",
-            "📈 Threat intelligence integration and enrichment",
-            "🔍 Zero-day attack detection capabilities"
-        ],
-        liveUrl: "https://github.com/viveksinghisyour-max",
-        githubUrl: "https://github.com/viveksinghisyour-max",
-        category: "Threat Detection"
-    },
-    7: {
-        title: "Security Automation Scripts",
-        description: "Collection of Python automation scripts for security tasks including log analysis, threat intelligence gathering, and system hardening for enterprise security operations.",
-        image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop",
-        technologies: ["Python", "Bash", "APIs", "Automation Frameworks", "SIEM Integration"],
-        features: [
-            "📝 Advanced log analysis and correlation",
-            "🔍 Automated threat intelligence gathering",
-            "🛡️ System hardening and configuration scripts",
-            "📊 Security metrics and reporting automation",
-            "🔗 Multi-platform SIEM integration",
-            "⚡ Scalable security workflow automation"
-        ],
-        liveUrl: "https://github.com/viveksinghisyour-max",
-        githubUrl: "https://github.com/viveksinghisyour-max",
-        category: "Security Automation"
-    },
-    8: {
-        title: "Java Security Analysis Tool",
-        description: "Enterprise-grade Java application for security code analysis, vulnerability assessment, and secure coding practice enforcement in development environments.",
-        image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop",
-        technologies: ["Java", "Security Libraries", "Static Analysis", "Maven", "Spring Security"],
-        features: [
-            "🔍 Advanced static code security analysis",
-            "🛡️ Vulnerability pattern detection engine",
-            "📊 Security compliance reporting",
-            "🔧 Secure coding best practices enforcement",
-            "📈 Developer security training integration",
-            "🔄 CI/CD pipeline security integration"
-        ],
-        liveUrl: "https://github.com/viveksinghisyour-max",
-        githubUrl: "https://github.com/viveksinghisyour-max",
-        category: "Code Security"
+        liveUrl: "https://github.com/viveksinghisyour-max/BugShield_AI",
+        githubUrl: "https://github.com/viveksinghisyour-max/BugShield_AI",
+        category: "Security Tools"
     }
 };
 
