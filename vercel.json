@@ -1,14 +1,8 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "index.html",
-      "use": "@vercel/static"
-    }
-  ],
   "routes": [
     {
-      "src": "/(.*\\.(css|js|jpg|png|svg|ico))",
+      "src": "/(.*\\.(css|js|jpg|png|svg|ico|webmanifest))",
       "dest": "/$1"
     },
     {
