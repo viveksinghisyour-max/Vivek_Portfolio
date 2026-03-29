@@ -1,25 +1,30 @@
-const { Pool } = require('pg');
-
-// Initialize database pool using connection string.
-// Vercel Postgres provides POSTGRES_URL automatically.
-// Supabase/Neon will provide DATABASE_URL if configured by user.
-const connectionString = process.env.POSTGRES_URL || process.env.DATABASE_URL;
+import { Pool } from 'pg';
 
 let pool;
-if (connectionString) {
-    pool = new Pool({
-        connectionString,
-        ssl: {
-            rejectUnauthorized: false
+
+// Cache the connection pool across warm invocations
+function getPool() {
+    if (!pool) {
+        const connectionString = process.env.POSTGRES_URL || process.env.DATABASE_URL;
+        if (connectionString) {
+            pool = new Pool({
+                connectionString,
+                ssl: {
+                    rejectUnauthorized: false
+                }
+            });
         }
-    });
+    }
+    return pool;
 }
 
-// Ensure the table exists when the handler is ready
-async function ensureTableExists() {
-    if (!pool) return;
+let tableEnsured = false;
+
+// Ensure the table exists synchronously within the handler lifecycle
+async function ensureTableExists(dbPool) {
+    if (tableEnsured) return;
     try {
-        await pool.query(`
+        await dbPool.query(`
             CREATE TABLE IF NOT EXISTS contact_messages (
                 id SERIAL PRIMARY KEY,
                 name VARCHAR(100) NOT NULL,
@@ -29,13 +34,12 @@ async function ensureTableExists() {
                 created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
             );
         `);
+        tableEnsured = true;
     } catch (error) {
         console.error('Failed to ensure table exists:', error);
+        throw error;
     }
 }
-
-// In serverless environments, we attempt to initialize this asynchronously.
-ensureTableExists();
 
 export default async function handler(req, res) {
     if (req.method !== 'POST') {
@@ -59,10 +63,14 @@ export default async function handler(req, res) {
             return res.status(400).json({ error: 'Invalid email address.' });
         }
 
-        if (!pool) {
+        const currentPool = getPool();
+        if (!currentPool) {
             console.error('Database connection string is NOT configured.');
-            return res.status(503).json({ error: 'Database service is currently unavailable. Please setup POSTGRES_URL.' });
+            return res.status(503).json({ error: 'Database service is currently unavailable. Please setup POSTGRES_URL or DATABASE_URL.' });
         }
+
+        // Make sure table exists before inserting
+        await ensureTableExists(currentPool);
 
         // Parameterized query to prevent SQL Injection
         const queryText = `
@@ -71,11 +79,11 @@ export default async function handler(req, res) {
             RETURNING id;
         `;
         
-        await pool.query(queryText, [name, email, subject, message]);
+        await currentPool.query(queryText, [name, email, subject, message]);
 
         return res.status(200).json({ success: true, message: 'Message securely saved.' });
     } catch (error) {
-        console.error('Database insertion error:', error);
+        console.error('Database insertion error:', error.message || error);
         return res.status(500).json({ error: 'Internal server error while processing request.' });
     }
 }
